@@ -5,6 +5,7 @@ const { User, Message, GuildMember, ThreadMember, Channel } = Partials
 const {DisTube} = require('distube')
 const {SpotifyPlugin} = require('@distube/spotify')
 
+require('dotenv').config()
 const fs = require('node:fs')
 
 const client = new Client({
@@ -47,8 +48,10 @@ function loadCommands() {
 
 
 // START
-require('dotenv').config()
+
 client.login(process.env.TOKEN).then(() =>{
     loadCommands()
     loadEvents()
 })
+
+
